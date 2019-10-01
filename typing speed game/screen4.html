@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .btn1 {
+      margin: 0px 150px;
+    }
+    .progress {
+      margin: 0% 25%;
+    }
+    .father1 {
+      position: relative;
+    }
+    .b1 {
+      position: absolute;
+      height: 300px;
+      width: 170px;
+      padding: 10px;
+      /* border-image: url(border1.png) 20% round; */
+      border: 3px dashed black;
+      margin: 0px 19px;
+    }
+    .b2 {
+      position: absolute;
+      float: left;
+      height: 300px;
+      width: 170px;
+      padding: 10px;
+      /* border-image: url(border1.png) 20% round; */
+      border: 3px dashed black;
+      /* margin-right: 48px; */
+      margin: -118px 12px -2px 1310px;
+    }
+    .father2 {
+      position: relative;
+    }
+    .a1 {
+      position: absolute;
+      padding: 17px;
+      margin: -75px 19px;
+    }
+    .a2 {
+      position: absolute;
+      float: left;
+
+      padding: 10px;
+
+      /* margin-right: 48px; */
+      margin: -86px 12px -2px 1310px;
+    }
+    .wholebody {
+      background-image: url("bg.png");
+    }
+  </style>
+  <body class="wholebody">
+    <div class="alert alert-danger" role="alert">
+      <h1 align="center">TYPE CHALLENGE</h1>
+    </div>
+    <br />
+
+    <br />
+    <br />
+    <div class="father2">
+      <!-- <div class="a1">
+        <h2>Score</h2>
+        <br />
+        <span id="score"><h1>0</h1></span>
+      </div> -->
+
+      <!-- <div class="a2">
+        <h2>Time Left</h2>
+        <br /><span id="time"><h1>0</h1></span>
+      </div> -->
+    </div>
+    <br />
+    <hr />
+    <div class="container text-center"></div>
+    <!-- words input -->
+
+    <div class="father1">
+      <!-- <div class="b1" id="arrscreen4"></div> -->
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <h5 align="center">-----the challenge has ended-----</h5>
+          <br />
+          <h3 align="center">Hey</h3>
+          <h3 align="center" id="playername"></h3>
+          <h3 id="scorescreen4"></h3>
+          <!-- <h3 align="center">Average:</h3> -->
+          <h3 id="avgscreen4"></h3>
+          <button align="center" class="btn1" type="button" onclick="screen2()">
+            <h1>START NEW GAME</h1>
+          </button>
+        </div>
+      </div>
+
+      <!-- <div class="b2">
+        Misses
+      </div> -->
+    </div>
+    <script>
+      document.querySelector("#playername").innerHTML = localStorage.getItem(
+        "name1"
+      );
+      document.querySelector("#scorescreen4").innerHTML = localStorage.getItem(
+        "msg2"
+      );
+      document.querySelector("#arrscreen4").innerHTML = localStorage.getItem(
+        "wordstyp"
+      );
+      document.querySelector("#avgscreen4").innerHTML = localStorage.getItem(
+        "avg"
+      );
+      function screen2() {
+        location.replace("screen1.html");
+      }
+    </script>
+  </body>
+</html>

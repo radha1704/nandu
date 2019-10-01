@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Screen-1</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .btn1 {
+        /* margin: 0% 45%; */
+        background-color: rgb(114, 114, 228);
+        border: 6px solid black;
+        width: 20%;
+        height: 100px;
+      }
+      .btn1:hover {
+        background-color: green;
+        color: white;
+      }
+      #name1 {
+        border: 6px solid black;
+      }
+      .wholebody1 {
+        background-image: url("bg5.jpg");
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body class="wholebody1">
+    <div class="alert alert-danger" role="alert">
+      <h1 align="center">TYPE CHALLENGE</h1>
+    </div>
+    <br />
+    <h6 align="center">click on start to begin the game</h6>
+    <hr />
+    <br />
+    <br />
+    <h1 align="center">All the Best</h1>
+    <!-- <div class="progress">
+      <div
+        class="progress-bar progress-bar-striped active"
+        role="progressbar"
+        aria-valuenow="40"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        style="width:100%"
+      ></div>
+    </div> -->
+    <br />
+    <hr />
+    <form autocomplete="off" align="center">
+      <label for="name"><b> Player Name:</b></label>
+      <input
+        type="text"
+        placeholder="Enter Name"
+        id="name1"
+        name="name"
+      /><br />
+      <br />
+      <button class="btn1" type="button" onclick="screen2()">
+        <h1>START</h1>
+      </button>
+    </form>
+    <script>
+      function screen2() {
+        let pname = document.querySelector("#name1").value;
+        if (pname == "") {
+          alert("Enter Player Name");
+          return false;
+        }
+        localStorage.setItem("name1", pname);
+        location.replace("screen2.html");
+      }
+    </script>
+  </body>
+</html>

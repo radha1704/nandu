@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>screen-2</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .btn1 {
+        /* margin: 0% 45%; */
+        background-color: rgb(114, 114, 228);
+        border: 6px solid black;
+        width: 20%;
+        height: 100px;
+      }
+      .btn1:hover {
+        background-color: green;
+        color: white;
+      }
+      #name1 {
+        border: 6px solid black;
+      }
+      .wholebody2 {
+        background-image: url("bg2.jpg");
+      }
+    </style>
+  </head>
+  <body class="wholebody2">
+    <div class="alert alert-danger" role="alert">
+      <h1 align="center">TYPE CHALLENGE</h1>
+    </div>
+    <br />
+    <h6 align="center">click on start to begin the game</h6>
+    <hr />
+    <br />
+    <br />
+    <!-- <div class="progress">
+      <div
+        class="progress-bar progress-bar-striped active"
+        role="progressbar"
+        aria-valuenow="40"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        style="width:100%"
+      >
+        100%
+      </div> -->
+
+    <form align="center">
+      <label for="name"><b> the game will begin in:</b></label>
+      <br />
+      <br />
+    </form>
+    <script>
+      function countDown(secs, elem) {
+        var element = document.getElementById(elem);
+        element.innerHTML =
+          "<h2 align='center'>Please wait for " +
+          secs +
+          "<h2 align='center'>seconds";
+        if (secs < 1) {
+          clearTimeout(timer);
+          location.replace("screen3.html");
+          // element.innerHTML = "<h2 align='center'>Countdown Complete!</h2>";
+          // element.innerHTML +=
+          //   '<a href="screen3.html" align="center"><h2 align="center">Click here now</h2></a>';
+        }
+        secs--;
+        var timer = setTimeout("countDown(" + secs + ',"' + elem + '")', 1000);
+      }
+    </script>
+    <div id="status"></div>
+    <script>
+      countDown(3, "status");
+      let x = 60;
+      let timerId = setInterval(item => {
+        document.querySelector("#timeleft").innerHTML = x--;
+        document.querySelector(".progress-bar").style.width = x * 1.67 + "%";
+      }, 1000);
+      setTimeout(() => {
+        clearInterval(timerId);
+        location.replace("");
+      }, 61000);
+    </script>
+  </body>
+</html>
